@@ -23,7 +23,7 @@ public class CustomerWorkflow {
 */
 
     @EventHandlerMethod
-    public void customerrr(DispatchedEvent<CustomerCreatedEvent> event){
+    public void customerrr(EventHandlerContext<CustomerCreatedEvent> event){
         System.out.println("I have been called");
 
     }

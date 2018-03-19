@@ -1,8 +1,10 @@
 package com.thesis.CustomerServiceEventuate.Events;
 
+import io.eventuate.EventEntity;
+
 import java.util.UUID;
 
-
+@EventEntity(entity = "com.thesis.CustomerServiceEventuate.CustomerAggregate")
 public class CustomerCreatedEvent implements CustomerEvent {
 
     private  UUID id;
