@@ -1,8 +1,8 @@
 package com.thesis.CustomerServiceEventuate;
 
 import com.thesis.CustomerServiceEventuate.Commands.CustomerCommand;
-import io.eventuate.AggregateRepository;
-import io.eventuate.EventuateAggregateStore;
+import io.eventuate.sync.AggregateRepository;
+import io.eventuate.sync.EventuateAggregateStore;
 import io.eventuate.javaclient.driver.EventuateDriverConfiguration;
 import io.eventuate.javaclient.spring.EnableEventHandlers;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -36,15 +36,17 @@ public class ConfigClass {
         return new ServletListenerRegistrationBean<RequestContextListener>(new RequestContextListener());
     }
 
-    @Bean
-    public CustomerService updateService(AggregateRepository<CustomerAggregate, CustomerCommand> aggregateRepository) {
-        return new CustomerService(aggregateRepository);
-    }
-
 
     @Bean
     public AggregateRepository<CustomerAggregate, CustomerCommand> aggregateRepository(EventuateAggregateStore eventStore){
-        return new AggregateRepository<>(CustomerAggregate.class, eventStore);
+        return new AggregateRepository<CustomerAggregate, CustomerCommand>(CustomerAggregate.class, eventStore);
+    }       //
+
+
+
+    @Bean
+    public CustomerService updateService(AggregateRepository<CustomerAggregate, CustomerCommand> aggregateRepository) {
+        return new CustomerService(aggregateRepository);
     }
 
 

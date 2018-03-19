@@ -1,5 +1,6 @@
 package com.thesis.CustomerServiceEventuate.Events;
 
+import com.thesis.CustomerServiceEventuate.Events.CustomerEvent;
 import io.eventuate.EventEntity;
 
 import java.util.UUID;

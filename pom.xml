@@ -62,17 +62,18 @@
 		<dependency>
 			<groupId>io.eventuate.client.java</groupId>
 			<artifactId>eventuate-client-java-spring</artifactId>
-			<version>0.20.1.RELEASE</version>
+			<version>0.17.0.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>io.eventuate.local.java</groupId>
 			<artifactId>eventuate-local-java-jdbc</artifactId>
 			<version>0.17.0.RELEASE </version>
 		</dependency>
-		<dependency>
+	 <!-- <dependency>
 			<groupId>io.eventuate.local.java</groupId>
 			<artifactId>eventuate-local-java-embedded-cdc-autoconfigure</artifactId>
-		</dependency>
+			<version>0.17.0.RELEASE </version>
+		</dependency> -->
 
 
 	</dependencies>

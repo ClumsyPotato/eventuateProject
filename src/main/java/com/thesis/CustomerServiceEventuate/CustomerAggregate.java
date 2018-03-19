@@ -3,7 +3,6 @@ package com.thesis.CustomerServiceEventuate;
 import com.thesis.CustomerServiceEventuate.Commands.CreateCustomerCommand;
 import com.thesis.CustomerServiceEventuate.Commands.CustomerCommand;
 import com.thesis.CustomerServiceEventuate.Events.CustomerCreatedEvent;
-import io.eventuate.CommandProcessingAggregate;
 import io.eventuate.Event;
 import io.eventuate.EventUtil;
 import io.eventuate.ReflectiveMutableCommandProcessingAggregate;
@@ -15,6 +14,7 @@ public class CustomerAggregate extends ReflectiveMutableCommandProcessingAggrega
 
     private UUID id;
     private String name;
+
     private int balance;
 
 
